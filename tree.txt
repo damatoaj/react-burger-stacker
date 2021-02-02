@@ -1,0 +1,17 @@
+App
+|--IngredientList
+|   |--Ingredient(s)
+|       |--name
+|       |--color
+|       
+|       
+|--BurgerPane
+|   |-BurgerStack
+|   |    |-Ingredient(s)
+|   |       |--name
+|   |       |--color
+|   |
+|   |--ClearBurger
+|   |   |--Button
+|   |
+|   |--CuttingBoard
