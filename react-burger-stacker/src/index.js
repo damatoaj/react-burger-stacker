@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import BurgerPane from './BurgerPane';
 import Ingredients from './Ingredients';
+import IngredientList from './IngredientList';
 
 ReactDOM.render(
   <React.StrictMode>
