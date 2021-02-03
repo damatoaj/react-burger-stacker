@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Ingredients from './Ingredients';
+import './App.css'
+
 
 class IngredientList extends Component {
     render() {
@@ -7,6 +9,7 @@ class IngredientList extends Component {
         return (
             <div>
                 <li>{this.props.food.name}</li>
+                <button >Add Ingredient</button>
             </div>
         )
     }
