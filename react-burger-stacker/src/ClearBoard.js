@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 class ClearBoard extends Component {
-    renders() {
+    render() {
         return (
-            <>
-            </>
+            <div>
+                <button>New Burger Please</button>
+            </div>
         )
     }
 }
