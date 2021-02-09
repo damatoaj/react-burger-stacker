@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css'
 import IngredientList from './components/IngredientList'
 import BurgerPane from './components/BurgerPane'
 
-class App extends Component { 
-  state = {
-    ingredients: [
+function App() { 
+  
+    const [ingredients, setIngredients]= useState([
       {name: 'Kaiser Bun', color: 'saddlebrown'},
       {name: 'Sesame Bun', color: 'sandybrown'},
       {name: 'Gluten Free Bun', color: 'peru'},
@@ -18,57 +18,43 @@ class App extends Component {
       {name: 'Tomato', color: 'tomato'},
       {name: 'Bacon', color: 'maroon'},
       {name: 'Onion', color: 'lightyellow'}
-    ],
-    burgerBits: []
-  }
+    ])
+    const [burgerBits, setBurgerBits] = useState([])
+  
 
-  //add an ingredient
-  addToStack = (e) => {
-    let name = e.target.innerText
-    let color = e.target.style.backgroundColor
-    //splice
-      // let tempArray = this.state.burgerBits
-      // tempArray.splice(0,0,{name, color})
-      // this.setState({
-      //   burgerBits: tempArray
-      // })
-   // ----------unshift
-    // let tempArray = this.state.burgerBits
-    // tempArray.unshift({name,color})
-    //   this.setState({
-    //     burgerBits: tempArray
-    //   })
-    // --------spread operator
-    this.setState({
-      burgerBits: [{name, color}, ...this.state.burgerBits]
-    })
-  }
+    // // //add an ingredient
+  const addToStack = (e) => {
+      let name = e.target.innerText
+      let color = e.target.style.backgroundColor
 
-  //clear the ingredient
-  clearBurger = (e) => {
-    console.log('No Burger For You')
-    this.setState({
-      burgerBits: []
-    })
-  }
-
-  render () {
+        setBurgerBits(
+            ([{name, color}, ...burgerBits])
+          )}
+            
+            
+            //clear the ingredient
+  const  clearBurger = (e) => {
+        console.log('No Burger For You')
+        setBurgerBits(
+            []
+          )}
+                
     return (
       <main>
         <h1>Burger Stacker</h1>
         <div className='panes'>
           <IngredientList 
-            ingredients={this.state.ingredients} 
-            add={this.addToStack} 
+            ingredients={ingredients} 
+            add={addToStack} 
           />
         <BurgerPane 
-          burgerBits={this.state.burgerBits} 
-          clear={this.clearBurger}
+          burgerBits={burgerBits} 
+          clear={clearBurger}
           />
         </div>
       </main>
     )
-  }
 }
+
 
 export default App;

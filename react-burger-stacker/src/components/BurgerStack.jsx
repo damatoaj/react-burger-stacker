@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import ClearBurger from './ClearBurger'
+import React from 'react'
 import Ingredient from './Ingredient'
 
 
-class BurgerStack extends Component {
-    render() {
-        let bits = this.props.burgerBits.map(bit => {
+function BurgerStack (props) {
+        console.log(typeof props.burgerBits)
+        let bits = props.burgerBits.map(bit => {
             return <li><Ingredient ingredient={bit} /></li>
         })
         return(
@@ -16,6 +15,6 @@ class BurgerStack extends Component {
             </div>
         )
     }
-}
+
 
 export default BurgerStack
